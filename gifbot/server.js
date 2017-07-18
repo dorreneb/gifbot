@@ -42,20 +42,25 @@ var bot = new builder.UniversalBot(connector, function (session) {
         }
     };
 
+    var keyPhrases = {};
+    var responseString = "Something went wrong :(";
     request(options)
-        .then(function (parsedBody) {
+        .then(function (parsedBody) { //get the key phrases from the message
             if (parsedBody.documents.length > 0) {
-                var keyPhrases = parsedBody.documents[0].keyPhrases;
-
-
-                session.send("You said: %s", JSON.stringify(keyWords.keyPhrases));
+                keyPhrases = parsedBody.documents[0].keyPhrases;
             } else {
-                session.send("No documents returned.");
+                responseString = "No documents returned.";
+            } 
+        })
+        .then(function () { //if there are key phrases, call giphy to get the right gif
+            if (keyPhrases) {
+                responseString = JSON.stringify(keyPhrases);
             }
-            
         })
         .catch(function (err) {
-            session.send("ERROR - %s", err);
+            responseString = "ERROR - " + err;
+        }).then(function () { //actually send the message back to the client
+            session.send(responseString);
         });
 
     

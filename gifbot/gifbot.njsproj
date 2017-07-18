@@ -4,10 +4,14 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>gifbot</Name>
     <RootNamespace>gifbot</RootNamespace>
-    <Environment>MICROSOFT_APP_ID=72ca6cca-8916-4b72-b5a0-11333f2e4a54
-MICROSOFT_APP_PASSWORD=7pWLt6mwynibcT7yBxGspv6
+    <Environment>MICROSOFT_APP_ID=3c9937e8-0024-4279-b815-743629e66dec
+MICROSOFT_APP_PASSWORD=iXaSCdxmSjCgpXzhb8bka9q
+
+MICROSOFT_APP_ID_PROD=72ca6cca-8916-4b72-b5a0-11333f2e4a54
+MICROSOFT_APP_PASSWORD_PROD=7pWLt6mwynibcT7yBxGspv6
 TEXT_ANALYTICS_KEY=d853d961b1f345c89a2d6a16debcfa00
 GIPHY_API_KEY=38d9a01760f44600a9a6fd0ca3ab94e4</Environment>
+    <NameOfLastUsedPublishProfile>gifbot20170717083637 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -33,6 +37,7 @@ GIPHY_API_KEY=38d9a01760f44600a9a6fd0ca3ab94e4</Environment>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="server.js" />
+    <None Include="gifbot20170717083637 - Web Deploy.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
     <Content Include="package.json" />
