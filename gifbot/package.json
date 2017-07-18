@@ -1,0 +1,17 @@
+{
+  "name": "gifbot",
+  "version": "0.0.0",
+  "description": "gifbot",
+  "scripts": {
+    "start": "node server"
+  },
+  "engines": {
+    "node": "~6.10.x"
+  },
+  "author": {
+    "name": "dobrown"
+  },
+  "dependencies": {
+    "botbuilder": "^3.8.4"
+  }
+}
